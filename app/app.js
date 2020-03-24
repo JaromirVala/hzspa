@@ -5,6 +5,11 @@ const axios = require("axios");
 const appRoot = require('app-root-path');
 const parseString = require('xml2js').parseString;
 
+//var moment = require('moment');
+            //require("moment/min/locales.min");
+//require('moment/locale/cs');
+            //moment.locale('cs');
+
 const fileName = appRoot.path+'\\tmp\\lasttime.txt';
 const url = 'https://www.hzspa.cz/vyjezdy/atom-aktualni-vyjezdy.php';
 
@@ -22,25 +27,25 @@ const item = (() => {
         item.typeId = {};
         item.typeId.type = itemXtype;
         item.typeId.ref = 'Type';      
-        item.type = '';
+        item.type = null;
         item.subtypeId = {};
         item.subtypeId.type = itemXtype;
         item.subtypeId.ref = 'Subtype';      
         item.subtype = null;        
-        item.noteForMedia =  '';
+        item.noteForMedia =  null;
         item.regionId = {};
         item.regionId.type = itemXtype;
         item.regionId.ref = 'Region';       
-        item.region = '';
+        item.region = null;
         item.districtId = {};
         item.districtId.type = itemXtype;
         item.districtId.ref = 'District';         
-        item.districtId = '';       
-        item.village = '';     
-        item.partOfVillage = '';
+        item.districtId = null;       
+        item.village = null;     
+        item.partOfVillage = null;
         item.ORP = null;        
-        item.street = '';       
-        item.road = '';
+        item.street = null;       
+        item.road = null;
         item.detail={};
         item.detail.detail = null;
         return item;
